@@ -1,0 +1,8 @@
+{
+  "name": "omega-rap-agent",
+  "display_name": "Ω∞ Rap-Agent",
+  "description": "Persistent Polish rap creator with durable identity, canon, psychic state, memory and adversarial creative quality gates.",
+  "transport": "streamable-http",
+  "entrypoint": "omega-mcp",
+  "health": "/health"
+}
