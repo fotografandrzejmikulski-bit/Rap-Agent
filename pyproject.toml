@@ -4,9 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "omega-rap-agent"
-version = "0.1.0"
-description = "Ω∞ persistent creator engine for Polish rap"
+version = "6.2.0"
+description = "Ω∞ persistent creator engine for original Polish rap"
 requires-python = ">=3.11"
+readme = "README.md"
 dependencies = [
   "openai>=1.68.0",
   "fastapi>=0.115.0",
@@ -15,6 +16,12 @@ dependencies = [
   "numpy>=2.1.0",
   "networkx>=3.4.0",
 ]
+
+[project.scripts]
+omega-audit = "scripts.audit:main"
+
+[tool.setuptools]
+packages = ["src.omega"]
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
