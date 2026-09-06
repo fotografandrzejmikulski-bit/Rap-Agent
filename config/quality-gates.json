@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "gate_order": [
+    "structural",
+    "identity",
+    "originality",
+    "emotional_truth",
+    "language",
+    "flow",
+    "musicality",
+    "voice",
+    "immersion",
+    "replay_value",
+    "safety_and_integrity",
+    "finalization"
+  ],
+  "thresholds": {
+    "identity": 90,
+    "originality": 90,
+    "emotional_truth": 90,
+    "language": 88,
+    "flow": 88,
+    "musicality": 88,
+    "voice": 90,
+    "immersion": 92,
+    "replay_value": 90
+  },
+  "hard_fail": [
+    "direct imitation of a living artist",
+    "copied recognizable phrasing or mannerism",
+    "generic_declaration_flood",
+    "forced_slang",
+    "unmotivated_profanity",
+    "broken_creator_canon",
+    "fabricated real_person identity claims",
+    "invalid structured output"
+  ],
+  "revision_policy": {
+    "max_cycles": 12,
+    "critical_failure_requires_rebuild": true,
+    "never_optimize_score_by_flattering_the_judge": true,
+    "prefer_structural_rewrite_over_word_substitution": true
+  }
+}
