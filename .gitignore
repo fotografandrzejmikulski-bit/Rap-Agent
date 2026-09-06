@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.env
+.env.*
+!.env.example
+.DS_Store
+
+# Runtime state is persisted separately from source.
+# Keep the database only when explicitly versioning a local snapshot.
+data/*.sqlite-wal
+data/*.sqlite-shm
