@@ -28,23 +28,26 @@ jobs:
           python-version: "3.11"
           cache: "pip"
 
-      - name: Install dependencies
-        run: python -m pip install -r requirements.txt
+      - name: Install package
+        run: python -m pip install --upgrade pip && python -m pip install -e .
 
-      - name: Ensure state directory
-        run: mkdir -p data
+      - name: Integrity audit
+        run: python scripts/audit.py
 
-      - name: Wake Ω∞ from durable state
+      - name: Wake canonical runtime
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OMEGA_DB_PATH: data/omega_synapses.sqlite
+          OMEGA_WAKE_TICKS: "1"
         run: python scripts/wake.py
 
-      - name: Persist state snapshot
+      - name: Persist durable state
         run: |
           git config user.name "omega-singularity-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/omega_synapses.sqlite
-          git diff --cached --quiet && exit 0
-          git commit -m "chore: persist omega durable state"
+          git add data/omega_synapses.sqlite config/canon.json
+          if git diff --cached --quiet; then
+            echo "No durable state changes."
+            exit 0
+          fi
+          git commit -m "chore: persist omega continuity state"
+          git pull --rebase origin main
           git push origin HEAD:main
