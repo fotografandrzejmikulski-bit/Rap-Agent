@@ -1,0 +1,26 @@
+{
+  "runtime_version": "6.1.0",
+  "state": {
+    "tick_interval_seconds": 60,
+    "max_elapsed_seconds_per_resume": 3600,
+    "stochastic": true
+  },
+  "memory": {
+    "retrieval_limit": 12,
+    "max_recent_scan": 1000,
+    "confidence_floor": 0.0,
+    "confidence_ceiling": 1.0
+  },
+  "forge": {
+    "max_cycles": 12,
+    "temperature_generation": 0.9,
+    "temperature_reconstruction": 0.72,
+    "temperature_judge": 0.1,
+    "minimum_lines": 12,
+    "minimum_signature_length": 6
+  },
+  "http": {
+    "max_prompt_chars": 12000,
+    "max_events": 250
+  }
+}
